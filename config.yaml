@@ -1,0 +1,66 @@
+# GestureBoard Pro Configuration
+
+# MediaPipe Settings
+mediapipe:
+  min_detection_confidence: 0.75
+  min_tracking_confidence: 0.70
+  max_num_hands: 2 # Track up to 2 hands
+
+# Performance
+performance:
+  target_fps: 30
+  smooth_kalman:
+    process_noise: 0.0005
+    measurement_noise: 0.08
+
+# HUD Design
+hud:
+  top_bar_height: 36
+  bg_opacity: 0.75
+  font_scale: 0.5
+  colors:
+    background: [20, 20, 20]     # Dark gray (BGR)
+    text_main: [255, 255, 255]   # White
+    good_perf: [0, 255, 0]       # Green
+    warn_perf: [0, 165, 255]     # Amber
+    poor_perf: [0, 0, 255]       # Red
+    accent_sketch: [0, 255, 255] # Cyan
+    accent_anno: [255, 0, 255]   # Magenta
+    accent_shapes: [255, 255, 0] # Yellow
+  
+  # Color Palette Arc (NEW)
+  palette:
+    radius: 180
+    inner_radius: 120
+    colors:
+      - [255, 0, 0]    # Blue
+      - [0, 255, 0]    # Green
+      - [0, 0, 255]    # Red
+      - [0, 255, 255]  # Yellow (BGR)
+      - [255, 255, 0]  # Cyan
+      - [255, 0, 255]  # Magenta
+      - [255, 255, 255]# White
+
+# Canvas Layers
+layers:
+  - name: "SKETCH"
+    opacity: 1.0
+  - name: "ANNOTATION"
+    opacity: 0.65
+  - name: "SHAPES"
+    opacity: 0.90
+
+# Gestures & Actions
+gestures:
+  pinch_threshold: 30
+  fixed_brush_size: 8
+  swipe_threshold: 40
+  clear_hold_time: 1.0
+  export_hold_time: 2.0
+  snap_dist_threshold: 0.04
+
+# Export
+export:
+  gif_fps: 8
+  gif_scale: 0.5
+  gif_interval: 10
